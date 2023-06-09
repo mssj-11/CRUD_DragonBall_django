@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #   Filtrando todo dentro de libreria-urls.py
+    path('', include('libreria.urls')),
 ]
