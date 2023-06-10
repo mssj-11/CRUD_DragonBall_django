@@ -1,0 +1,36 @@
+{% {% extends 'base.html' %} %}
+
+{% block titulo %}Agregar Personaje{% endblock %}
+
+{% block contenido %}
+
+            <div class="col-md-3"></div>
+            <div class="col-md-6 center card shadow p-3 bg-body rounded">
+              <br><h2 class="title p-3 text-white text-center fw-bold" style="background-color: orangered;">Crear personaje</h2><br>
+              
+              <form action="" method="post" class="form">
+                <div class="mb-2 form-group">
+                  <label for="personaje" class="form-label">Personaje:</label>
+                  <input type="text" class="form-control" name="personaje" placeholder="Ingresa el personaje" required>
+                </div>
+                <div class="mb-2 form-group">
+                  <label for="imagen" class="form-label">Imagen:</label>
+                  <input class="form-control" type="file" name="imagen" id="imagen" accept="image/*" required>
+                </div>
+                <div class="mb-2 form-group">
+                  <label for="raza" class="form-label">Raza:</label>
+                  <input type="text" class="form-control" name="raza" placeholder="Ingresa la raza" required>
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="descripcion" class="form-label">Descripción:</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="3" placeholder="Descripción del personaje" required></textarea>
+                </div>
+            
+                <div class="mb-4">
+                  <button type="submit" class="btn btn-lg form-control text-white" style="background-color: orangered;">Iniciar sesión</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-3"></div>
+
+{% endblock %}
