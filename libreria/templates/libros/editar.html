@@ -1,4 +1,4 @@
-{% {% extends 'base.html' %} %}
+{% extends 'base.html' %}
 
 {% block titulo %}Editar Personaje{% endblock %}
 
@@ -31,7 +31,8 @@
                 </div>
             
                 <div class="mb-4">
-                  <button type="submit" class="btn btn-primary btn-lg form-control">Iniciar sesión</button>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                  <a href="{% url 'personajes' %}" class="btn btn-dark">Cancelar</a>
                 </div>
               </form>
             </div>

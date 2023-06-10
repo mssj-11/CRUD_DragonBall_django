@@ -25,26 +25,27 @@
           <div class="collapse navbar-collapse fw-bold" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-item nav-link active" href="#">Inicio</a>
+                <a class="nav-item nav-link active" href="{% url 'inicio' %}">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link active" href="#">Personajes</a>
+                <a class="nav-item nav-link active" href="{% url 'personajes' %}">Personajes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link active" href="#">Nosotros</a>
+                <a class="nav-item nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <br><br>
+      <br>
     <div class="container">
         <div class="row">
-                {% block cont  %}
+                {% block contenido  %}
                 {% endblock %}
         </div>
     </div>
+    <br>
 
 
   <!-- Bootstrap JavaScript Libraries -->
