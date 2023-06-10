@@ -11,8 +11,8 @@ def nosotros(request):
 def personajes(request):
     return render(request, "paginas/personajes.html")
 #   CRUD
-def crear_personajes(request):
+def crear(request):
     return render(request, "libros/crear.html")
 
-def editar_personajes(request):
+def editar(request):
     return render(request, "libros/editar.html")
