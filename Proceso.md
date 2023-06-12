@@ -91,50 +91,21 @@ python manage.py makemigrations
 ```sh
 python manage.py migrate
 ```
-#   *******************************************************
 
-####    Si ha ocurrido un error después de crear y configurar la conexión a la DB, no se puede correr el servidor y tampoco crear las migraciones entonces se deberá de trabajar bajo los entornos virtuales para poder instalar las versiones de los paquetes solo en el proyecto mediante los entornos virtuales.
+Agregar el modelo - tabla creada en el archivo `admin.py` dentro de la carpeta creada librería
+```py
+from django.contrib import admin
+from .models import Personajes
 
-##  Entornos virtuales:
-Instalar:
-```sh
-pip install virtualenv
-```
-Verificar la versión actual:
-```sh
-virtualenv --version
+# Register your models here.
+admin.site.register(Personajes)
 ```
 
-
-Una vez realizado los 2 pasos anteriores, ingresar a la carpeta raíz del proyecto y crear/nombrar el entorno virtual.<br<
-Crear el entorno virtual con el nombre **venv**
-```sh
-virtualenv venv
-```
-Ingresando a la carpeta, Activando el entorno virtual
-```sh
-.\venv\Scripts\activate
-```
-Desactivar el entorno virtual:
-```sh
-deactivate
-```
-### Instalación de los siguientes paquetes dentro de nuestro entorno virtual activado.
-Para instalara la ultima versión:
-```sh
-pip install django
-```
-```sh
-pip install PyMySQL
-```
-```sh
-pip install pillow
-```
-Otras opciones:
-```sh
-pip install mysqlclient
-```
-```sh
-```
-```sh
-```
+##  Crear el super usuario
+`python manage.py createsuperuser`
+Puedes configurarlo al gusto
+**Configuración para este proyecto:**
+*   admin
+*   admin@admin.com
+*   admin
+Esto creara una ruta **admin** con la cual creara un formulario de sesión.
