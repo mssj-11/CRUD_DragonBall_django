@@ -5,7 +5,7 @@
 {% block contenido %}
           <div class="col-md-12">
               <!--Tabla-->
-              <a href="{% url 'crear' %}" class="btn text-white mb-3" style="background-color: orangered;">Nuevo personaje</a>
+              <a href="{% url 'crear' %}" class="btn text-white mb-3" style="background-color: orangered;"><i class="bi bi-plus-square-fill"></i> Nuevo personaje</a>
               <h2 class="card-title p-3 bg-primary text-center text-white fw-bold">Personajes Dragon Ball</h2>
               <div class="table-responsive text-center">
                 <table class="table table-striped">
@@ -20,15 +20,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for personaje in personajes %}
+                    {% for personaje in page_obj %}
                     <tr>
                       <td>{{ personaje.id }}</td>
                       <td>{{ personaje.nombre }}</td>
                       <td>
-                        <img src="{{personaje.imagen.url}}" style="height: 100px;" class="img-fluid rounded-top" alt="">
+                        <img src="{{personaje.imagen.url}}" style="height: 150px;" class="img-fluid rounded-top" alt="">
                       </td>
                       <td>{{ personaje.raza }}</td>
-                      <td>{{ personaje.descripcion }}</td>
+                      <td style="height: 100px; width: 37%;">{{ personaje.descripcion }}</td>
                       <td>
                         <a href="{% url 'editar' personaje.id %}" class="btn btn-warning text-white"><i class="bi bi-pencil-square"></i></a>
                         <a href="{% url 'eliminar' personaje.id %}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
@@ -41,19 +41,7 @@
               <!--Tabla end-->
               
               <!--Paginacion-->
-              <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-caret-left-fill"></i></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#"><i class="bi bi-caret-right-fill"></i></a>
-                  </li>
-                </ul>
-              </nav>
+              {% include 'libros/paginacion.html' %}
               <!--Paginacion end-->
               </div>
 {% endblock %}

@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Personajes
 from .forms import PersonajesForm
+#   Paginacion
+from django.core.paginator import Paginator
+
 
 # Paginas
 def inicio(request):
@@ -13,7 +16,13 @@ def nosotros(request):
 def personajes(request):
     #   Mostrando la informacion de la DB a partir del modelo
     personajes = Personajes.objects.all()
-    return render(request, "paginas/personajes.html", {'personajes': personajes})
+#    return render(request, "paginas/personajes.html", {'personajes': personajes})
+    #   Paginacion
+    paginator = Paginator(personajes, 8)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'paginas/personajes.html', {'page_obj': page_obj})
+
 #   CRUD
 def crear(request):
     formulario = PersonajesForm(request.POST or None, request.FILES or None)
