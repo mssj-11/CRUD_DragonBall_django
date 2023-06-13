@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block titulo %}Todos los personajes{% endblock %}
+
+{% block contenido %}
+            <!--CARDs de Personajes
+            <div class="row">-->
+            <h2 class="mb-3 p-1 bg-primary text-white text-center text-uppercase">Conoce a los personajes</h2>
+            <div class="card-group row row-cols-1 row-cols-md-3">
+            {% for personaje in page_obj %}
+              <div class="col mb-4 ">
+                <div class="card box">
+                  <div class="card-body">
+                    <div class="text-center">
+                        <img src="{{personaje.imagen.url}}" style="height: 250px;" alt="logo">
+                    </div>
+                    <div class="d-flex justify-content-between mt-1">
+                        <h3 class="card-title">{{personaje.nombre}}</h3>
+                        <p class="text-white fw-bold fs-6 p-1 bg-primary rounded">{{personaje.raza}}</p>
+                    </div>
+                    <p class="fst-normal" style="text-align: justify;">{{personaje.descripcion}}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+              <!--
+            </div>
+            END CARDs de Personajes-->
+
+            <!--Paginacion-->
+            {% include 'libros/paginacion.html' %}
+            <!--Paginacion end-->
+            <style>
+              .card:hover {
+                border-color: rgba(13, 110, 253, 0.7);
+                box-shadow: 0px 0px 10px 2px rgba(13, 110, 253, 0.6);
+                cursor: pointer;
+              }
+            </style>
+{% endblock %}

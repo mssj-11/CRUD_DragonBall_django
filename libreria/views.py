@@ -13,6 +13,13 @@ def inicio(request):
 def nosotros(request):
     return render(request, "paginas/nosotros.html")
 
+def all_personajes(request):
+    personajes = Personajes.objects.all()
+    paginator = Paginator(personajes, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'paginas/all_personajes.html', {'page_obj': page_obj})
+
 def personajes(request):
     #   Mostrando la informacion de la DB a partir del modelo
     personajes = Personajes.objects.all()

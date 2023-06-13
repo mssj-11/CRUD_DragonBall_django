@@ -28,7 +28,7 @@
                         <img src="{{personaje.imagen.url}}" style="height: 150px;" class="img-fluid rounded-top" alt="">
                       </td>
                       <td>{{ personaje.raza }}</td>
-                      <td style="height: 100px; width: 37%;">{{ personaje.descripcion }}</td>
+                      <td style="height: 100px; width: 37%; text-align: justify;">{{ personaje.descripcion }}</td>
                       <td>
                         <a href="{% url 'editar' personaje.id %}" class="btn btn-warning text-white"><i class="bi bi-pencil-square"></i></a>
                         <a href="{% url 'eliminar' personaje.id %}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
