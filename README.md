@@ -14,7 +14,7 @@
 ### Inicio
 <p align="center"><img src="/README/1.png"></p>
 
-### Inicio
+### Cartas
 <p align="center"><img src="/README/2.png"></p>
 
 ### Personajes
