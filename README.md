@@ -15,7 +15,7 @@
 <p align="center"><img src="/README/1.png"></p>
 
 ### Inicio
-<p align="center"><img src="/README/1.png"></p>
+<p align="center"><img src="/README/2.png"></p>
 
 ### Personajes
 <p align="center"><img src="/README/3.png"></p>
